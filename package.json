@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "PTCG-Webapp",
+  "description": "A Webapp for the PTCG",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",

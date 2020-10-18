@@ -19,7 +19,7 @@ indent_style = space
 indent_size = 2
 
 # Indentation override for all JS under lib directory
-[src/**.js]
+[src/**.{js,svelte, css}]
 indent_style = space
 indent_size = 2
 

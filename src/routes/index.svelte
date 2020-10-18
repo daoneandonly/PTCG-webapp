@@ -1,46 +1,32 @@
-<style>
-	h1, figure, p {
-		text-align: center;
-		margin: 0 auto;
-	}
+<script>
+  let now = new Date()
+  
+  $: seconds = now.getSeconds()
+  $: minutes = now.getMinutes()
+  $: hours = now.getHours()
 
-	h1 {
-		font-size: 2.8em;
-		text-transform: uppercase;
-		font-weight: 700;
-		margin: 0 0 0.5em 0;
-	}
+  setInterval(() => {
+      now = new Date()
+    }, 1000)
+</script>
+<style type='text/scss'>
+  .seconds {
+    color: red;
+  }
 
-	figure {
-		margin: 0 0 1em 0;
-	}
-
-	img {
-		width: 100%;
-		max-width: 400px;
-		margin: 0 0 1em 0;
-	}
-
-	p {
-		margin: 1em auto;
-	}
-
-	@media (min-width: 480px) {
-		h1 {
-			font-size: 4em;
-		}
-	}
+  h1 {
+    font-family: monospace;
+    margin: 0 auto;
+    display: block;
+    width: max-content;
+  }
+  
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Steven's project</title>
 </svelte:head>
 
-<h1>Great success!</h1>
-
-<figure>
-	<img alt='Success Kid' src='successkid.jpg'>
-	<figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p><strong>Try editing this file (src/routes/index.svelte) to test live reloading.</strong></p>
+<h1>
+  We're living at {hours}:<span class:minutes={minutes % 5 == 0}>{minutes}</span>:<span class:seconds={seconds % 5 == 0}>{seconds}</span>
+</h1>

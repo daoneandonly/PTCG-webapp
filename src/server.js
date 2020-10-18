@@ -11,7 +11,11 @@ polka() // You can also use Express
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		sapper.middleware()
-	)
+  )
+  .get('/test', (req, res) => {
+    console.log('Hit on test')
+    res.end('user:')
+  })
 	.listen(PORT, err => {
 		if (err) console.log('error', err);
 	});
